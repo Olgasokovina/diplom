@@ -1,0 +1,20 @@
+[
+    {
+        "label": "part_day",
+        "kind": 2,
+        "importPath": "function",
+        "description": "function",
+        "peekOfCode": "def part_day(hour):\n    if hour >=5 and hour < 11:\n        return 'Morning'\n    elif hour >= 11 and hour < 17:\n        return 'Afternoon'\n    elif hour >= 17 and hour < 23:\n        return 'Evening'\n    else:\n        return 'Night'\ndef get_time_periods(hour):",
+        "detail": "function",
+        "documentation": {}
+    },
+    {
+        "label": "get_time_periods",
+        "kind": 2,
+        "importPath": "function",
+        "description": "function",
+        "peekOfCode": "def get_time_periods(hour):\n    if hour >= 3 and hour < 7:\n        return 'Dawn'\n    elif hour >= 7 and hour < 12:\n        return 'Morning'\n    elif hour >= 12 and hour < 16:\n        return 'Afternoon'\n    elif hour >= 16 and hour < 22:\n        return 'Evening'\n    else:",
+        "detail": "function",
+        "documentation": {}
+    }
+]
