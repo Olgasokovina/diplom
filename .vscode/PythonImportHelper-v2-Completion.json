@@ -1,5 +1,292 @@
 [
     {
+        "label": "KNNBasic",
+        "importPath": "surprise",
+        "description": "surprise",
+        "isExtraImport": true,
+        "detail": "surprise",
+        "documentation": {}
+    },
+    {
+        "label": "KNNWithMeans",
+        "importPath": "surprise",
+        "description": "surprise",
+        "isExtraImport": true,
+        "detail": "surprise",
+        "documentation": {}
+    },
+    {
+        "label": "KNNWithZScore",
+        "importPath": "surprise",
+        "description": "surprise",
+        "isExtraImport": true,
+        "detail": "surprise",
+        "documentation": {}
+    },
+    {
+        "label": "KNNBaseline",
+        "importPath": "surprise",
+        "description": "surprise",
+        "isExtraImport": true,
+        "detail": "surprise",
+        "documentation": {}
+    },
+    {
+        "label": "SVD",
+        "importPath": "surprise",
+        "description": "surprise",
+        "isExtraImport": true,
+        "detail": "surprise",
+        "documentation": {}
+    },
+    {
+        "label": "SVDpp",
+        "importPath": "surprise",
+        "description": "surprise",
+        "isExtraImport": true,
+        "detail": "surprise",
+        "documentation": {}
+    },
+    {
+        "label": "NMF",
+        "importPath": "surprise",
+        "description": "surprise",
+        "isExtraImport": true,
+        "detail": "surprise",
+        "documentation": {}
+    },
+    {
+        "label": "BaselineOnly",
+        "importPath": "surprise",
+        "description": "surprise",
+        "isExtraImport": true,
+        "detail": "surprise",
+        "documentation": {}
+    },
+    {
+        "label": "CoClustering",
+        "importPath": "surprise",
+        "description": "surprise",
+        "isExtraImport": true,
+        "detail": "surprise",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "surprise",
+        "description": "surprise",
+        "isExtraImport": true,
+        "detail": "surprise",
+        "documentation": {}
+    },
+    {
+        "label": "Reader",
+        "importPath": "surprise",
+        "description": "surprise",
+        "isExtraImport": true,
+        "detail": "surprise",
+        "documentation": {}
+    },
+    {
+        "label": "rmse",
+        "importPath": "surprise.accuracy",
+        "description": "surprise.accuracy",
+        "isExtraImport": true,
+        "detail": "surprise.accuracy",
+        "documentation": {}
+    },
+    {
+        "label": "mae",
+        "importPath": "surprise.accuracy",
+        "description": "surprise.accuracy",
+        "isExtraImport": true,
+        "detail": "surprise.accuracy",
+        "documentation": {}
+    },
+    {
+        "label": "fcp",
+        "importPath": "surprise.accuracy",
+        "description": "surprise.accuracy",
+        "isExtraImport": true,
+        "detail": "surprise.accuracy",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "pickle",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pickle",
+        "description": "pickle",
+        "detail": "pickle",
+        "documentation": {}
+    },
+    {
+        "label": "optuna",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "optuna",
+        "description": "optuna",
+        "detail": "optuna",
+        "documentation": {}
+    },
+    {
+        "label": "LightFM",
+        "importPath": "lightfm",
+        "description": "lightfm",
+        "isExtraImport": true,
+        "detail": "lightfm",
+        "documentation": {}
+    },
+    {
+        "label": "random_train_test_split",
+        "importPath": "lightfm.cross_validation",
+        "description": "lightfm.cross_validation",
+        "isExtraImport": true,
+        "detail": "lightfm.cross_validation",
+        "documentation": {}
+    },
+    {
+        "label": "precision_at_k",
+        "importPath": "lightfm.evaluation",
+        "description": "lightfm.evaluation",
+        "isExtraImport": true,
+        "detail": "lightfm.evaluation",
+        "documentation": {}
+    },
+    {
+        "label": "recall_at_k",
+        "importPath": "lightfm.evaluation",
+        "description": "lightfm.evaluation",
+        "isExtraImport": true,
+        "detail": "lightfm.evaluation",
+        "documentation": {}
+    },
+    {
+        "label": "csr_matrix",
+        "importPath": "scipy.sparse",
+        "description": "scipy.sparse",
+        "isExtraImport": true,
+        "detail": "scipy.sparse",
+        "documentation": {}
+    },
+    {
+        "label": "ratings",
+        "kind": 5,
+        "importPath": "lightfm.learning_lightfm",
+        "description": "lightfm.learning_lightfm",
+        "peekOfCode": "ratings = pd.read_csv('ratings.csv') # Поставленные оценки\nbooks = pd.read_csv('books.csv') # Информация о книгах\ntags = pd.read_csv('tags.csv') # Информация о тегах\nbook_tags = pd.read_csv('book_tags.csv') # Книги с тегами\ndict_map = dict(zip(books.goodreads_book_id,books.book_id))\nbook_tags['id'] = book_tags.goodreads_book_id.apply(lambda x: dict_map[x])\nbook_tags[book_tags['goodreads_book_id']==5]\nbook_tags = book_tags[book_tags.tag_id.isin(tags.tag_id)]\nratings_matrix = csr_matrix((ratings['rating'],(ratings.user_id,ratings.book_id)))\nmeta_matrix = csr_matrix(([1]*len(book_tags),(book_tags['id'],book_tags['tag_id'])))",
+        "detail": "lightfm.learning_lightfm",
+        "documentation": {}
+    },
+    {
+        "label": "books",
+        "kind": 5,
+        "importPath": "lightfm.learning_lightfm",
+        "description": "lightfm.learning_lightfm",
+        "peekOfCode": "books = pd.read_csv('books.csv') # Информация о книгах\ntags = pd.read_csv('tags.csv') # Информация о тегах\nbook_tags = pd.read_csv('book_tags.csv') # Книги с тегами\ndict_map = dict(zip(books.goodreads_book_id,books.book_id))\nbook_tags['id'] = book_tags.goodreads_book_id.apply(lambda x: dict_map[x])\nbook_tags[book_tags['goodreads_book_id']==5]\nbook_tags = book_tags[book_tags.tag_id.isin(tags.tag_id)]\nratings_matrix = csr_matrix((ratings['rating'],(ratings.user_id,ratings.book_id)))\nmeta_matrix = csr_matrix(([1]*len(book_tags),(book_tags['id'],book_tags['tag_id'])))\ntrain, test = random_train_test_split(",
+        "detail": "lightfm.learning_lightfm",
+        "documentation": {}
+    },
+    {
+        "label": "tags",
+        "kind": 5,
+        "importPath": "lightfm.learning_lightfm",
+        "description": "lightfm.learning_lightfm",
+        "peekOfCode": "tags = pd.read_csv('tags.csv') # Информация о тегах\nbook_tags = pd.read_csv('book_tags.csv') # Книги с тегами\ndict_map = dict(zip(books.goodreads_book_id,books.book_id))\nbook_tags['id'] = book_tags.goodreads_book_id.apply(lambda x: dict_map[x])\nbook_tags[book_tags['goodreads_book_id']==5]\nbook_tags = book_tags[book_tags.tag_id.isin(tags.tag_id)]\nratings_matrix = csr_matrix((ratings['rating'],(ratings.user_id,ratings.book_id)))\nmeta_matrix = csr_matrix(([1]*len(book_tags),(book_tags['id'],book_tags['tag_id'])))\ntrain, test = random_train_test_split(\n    ratings_matrix, # Общая выборка",
+        "detail": "lightfm.learning_lightfm",
+        "documentation": {}
+    },
+    {
+        "label": "book_tags",
+        "kind": 5,
+        "importPath": "lightfm.learning_lightfm",
+        "description": "lightfm.learning_lightfm",
+        "peekOfCode": "book_tags = pd.read_csv('book_tags.csv') # Книги с тегами\ndict_map = dict(zip(books.goodreads_book_id,books.book_id))\nbook_tags['id'] = book_tags.goodreads_book_id.apply(lambda x: dict_map[x])\nbook_tags[book_tags['goodreads_book_id']==5]\nbook_tags = book_tags[book_tags.tag_id.isin(tags.tag_id)]\nratings_matrix = csr_matrix((ratings['rating'],(ratings.user_id,ratings.book_id)))\nmeta_matrix = csr_matrix(([1]*len(book_tags),(book_tags['id'],book_tags['tag_id'])))\ntrain, test = random_train_test_split(\n    ratings_matrix, # Общая выборка\n    test_percentage=0.2, # Размер тестовой выборки",
+        "detail": "lightfm.learning_lightfm",
+        "documentation": {}
+    },
+    {
+        "label": "dict_map",
+        "kind": 5,
+        "importPath": "lightfm.learning_lightfm",
+        "description": "lightfm.learning_lightfm",
+        "peekOfCode": "dict_map = dict(zip(books.goodreads_book_id,books.book_id))\nbook_tags['id'] = book_tags.goodreads_book_id.apply(lambda x: dict_map[x])\nbook_tags[book_tags['goodreads_book_id']==5]\nbook_tags = book_tags[book_tags.tag_id.isin(tags.tag_id)]\nratings_matrix = csr_matrix((ratings['rating'],(ratings.user_id,ratings.book_id)))\nmeta_matrix = csr_matrix(([1]*len(book_tags),(book_tags['id'],book_tags['tag_id'])))\ntrain, test = random_train_test_split(\n    ratings_matrix, # Общая выборка\n    test_percentage=0.2, # Размер тестовой выборки\n    random_state=42 # Генератор случайных чисел",
+        "detail": "lightfm.learning_lightfm",
+        "documentation": {}
+    },
+    {
+        "label": "book_tags['id']",
+        "kind": 5,
+        "importPath": "lightfm.learning_lightfm",
+        "description": "lightfm.learning_lightfm",
+        "peekOfCode": "book_tags['id'] = book_tags.goodreads_book_id.apply(lambda x: dict_map[x])\nbook_tags[book_tags['goodreads_book_id']==5]\nbook_tags = book_tags[book_tags.tag_id.isin(tags.tag_id)]\nratings_matrix = csr_matrix((ratings['rating'],(ratings.user_id,ratings.book_id)))\nmeta_matrix = csr_matrix(([1]*len(book_tags),(book_tags['id'],book_tags['tag_id'])))\ntrain, test = random_train_test_split(\n    ratings_matrix, # Общая выборка\n    test_percentage=0.2, # Размер тестовой выборки\n    random_state=42 # Генератор случайных чисел\n)",
+        "detail": "lightfm.learning_lightfm",
+        "documentation": {}
+    },
+    {
+        "label": "book_tags",
+        "kind": 5,
+        "importPath": "lightfm.learning_lightfm",
+        "description": "lightfm.learning_lightfm",
+        "peekOfCode": "book_tags = book_tags[book_tags.tag_id.isin(tags.tag_id)]\nratings_matrix = csr_matrix((ratings['rating'],(ratings.user_id,ratings.book_id)))\nmeta_matrix = csr_matrix(([1]*len(book_tags),(book_tags['id'],book_tags['tag_id'])))\ntrain, test = random_train_test_split(\n    ratings_matrix, # Общая выборка\n    test_percentage=0.2, # Размер тестовой выборки\n    random_state=42 # Генератор случайных чисел\n)\nmodel = LightFM(\n    loss='warp-kos', # Определяем функцию потерь",
+        "detail": "lightfm.learning_lightfm",
+        "documentation": {}
+    },
+    {
+        "label": "ratings_matrix",
+        "kind": 5,
+        "importPath": "lightfm.learning_lightfm",
+        "description": "lightfm.learning_lightfm",
+        "peekOfCode": "ratings_matrix = csr_matrix((ratings['rating'],(ratings.user_id,ratings.book_id)))\nmeta_matrix = csr_matrix(([1]*len(book_tags),(book_tags['id'],book_tags['tag_id'])))\ntrain, test = random_train_test_split(\n    ratings_matrix, # Общая выборка\n    test_percentage=0.2, # Размер тестовой выборки\n    random_state=42 # Генератор случайных чисел\n)\nmodel = LightFM(\n    loss='warp-kos', # Определяем функцию потерь\n    random_state=42, # Фиксируем случайное разбиение",
+        "detail": "lightfm.learning_lightfm",
+        "documentation": {}
+    },
+    {
+        "label": "meta_matrix",
+        "kind": 5,
+        "importPath": "lightfm.learning_lightfm",
+        "description": "lightfm.learning_lightfm",
+        "peekOfCode": "meta_matrix = csr_matrix(([1]*len(book_tags),(book_tags['id'],book_tags['tag_id'])))\ntrain, test = random_train_test_split(\n    ratings_matrix, # Общая выборка\n    test_percentage=0.2, # Размер тестовой выборки\n    random_state=42 # Генератор случайных чисел\n)\nmodel = LightFM(\n    loss='warp-kos', # Определяем функцию потерь\n    random_state=42, # Фиксируем случайное разбиение\n    learning_rate=0.05, # Темп обучения",
+        "detail": "lightfm.learning_lightfm",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "lightfm.learning_lightfm",
+        "description": "lightfm.learning_lightfm",
+        "peekOfCode": "model = LightFM(\n    loss='warp-kos', # Определяем функцию потерь\n    random_state=42, # Фиксируем случайное разбиение\n    learning_rate=0.05, # Темп обучения\n    no_components=100 # Размерность вектора для представления данных в модели\n)\nmodel = model.fit(\n    train, # Обучающая выборка\n    item_features=meta_matrix, # Признаки товаров\n    epochs=30, # Количество эпох",
+        "detail": "lightfm.learning_lightfm",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "lightfm.learning_lightfm",
+        "description": "lightfm.learning_lightfm",
+        "peekOfCode": "model = model.fit(\n    train, # Обучающая выборка\n    item_features=meta_matrix, # Признаки товаров\n    epochs=30, # Количество эпох\n    verbose=True # Отображение обучения\n)\n    # /my_volume\nwith open('my_volume/model.pkl', 'wb') as output:\n    pickle.dump(model, output)\nprec_score = precision_at_k(",
+        "detail": "lightfm.learning_lightfm",
+        "documentation": {}
+    },
+    {
+        "label": "prec_score",
+        "kind": 5,
+        "importPath": "lightfm.learning_lightfm",
+        "description": "lightfm.learning_lightfm",
+        "peekOfCode": "prec_score = precision_at_k(\n                     model,\n                     test,\n                     item_features = meta_matrix).mean()\nprint(prec_score)\nwith open(\"my_volume/Output.txt\", \"w+\") as text_file:\n    text_file.write(str(prec_score))",
+        "detail": "lightfm.learning_lightfm",
+        "documentation": {}
+    },
+    {
         "label": "part_day",
         "kind": 2,
         "importPath": "function",
@@ -14,6 +301,24 @@
         "importPath": "function",
         "description": "function",
         "peekOfCode": "def get_time_periods(hour):\n    if hour >= 3 and hour < 7:\n        return 'Dawn'\n    elif hour >= 7 and hour < 12:\n        return 'Morning'\n    elif hour >= 12 and hour < 16:\n        return 'Afternoon'\n    elif hour >= 16 and hour < 22:\n        return 'Evening'\n    else:",
+        "detail": "function",
+        "documentation": {}
+    },
+    {
+        "label": "add_missing_sundays",
+        "kind": 2,
+        "importPath": "function",
+        "description": "function",
+        "peekOfCode": "def add_missing_sundays(user_data,start_date,end_date):\n    \"\"\"\n    добавляет пропущенные даты (воскресенье) для каждого товара от начальной даты до конечной даты\n    в датесете должны быть столбцы 'timestamp' и 'itemid'\n    пример использования\n    available_full = available.groupby('itemid').apply(add_missing_sundays,start_date=start_date,end_date=end_date).ffill().bfill().reset_index(drop=True)\n    \"\"\"\n    all_sundays = pd.date_range(start=start_date, end=end_date, freq='W-SUN')\n    full_data = pd.DataFrame({'timestamp': all_sundays})\n    user_data = user_data.merge(full_data, on='timestamp', how='right')",
+        "detail": "function",
+        "documentation": {}
+    },
+    {
+        "label": "add_missing_days",
+        "kind": 2,
+        "importPath": "function",
+        "description": "function",
+        "peekOfCode": "def add_missing_days(user_data,start_date,end_date):\n    '''\n    добавляет пропущенные даты для каждого товара от начальной даты до конечной даты\n    в датесете должны быть столбцы 'timestamp' и 'itemid'\n    пример использования\n    available_full = available.groupby('itemid').apply(add_missing_sundays,start_date=start_date,end_date=end_date).ffill().bfill().reset_index(drop=True)\n    '''\n    all_days = pd.date_range(start=start_date, end=end_date, freq='d')\n    full_data = pd.DataFrame({'timestamp': all_days})\n    user_data = user_data.merge(full_data, on='timestamp', how='right')",
         "detail": "function",
         "documentation": {}
     }

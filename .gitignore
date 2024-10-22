@@ -169,3 +169,5 @@ Installs.ipynb
 TRY.ipynb
 # Требования.txt
 *.html
+.vscode/
+lightfm/
