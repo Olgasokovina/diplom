@@ -180,9 +180,8 @@ lightfm/LightFM.ipynb
 lightfm/my_volume/model_lfm.pkl
 lightfm/LightFM.ipynb
 lightfm/model
-lightfm\LightFM.ipynb
-Пояснения.md
+lightfm/LightFM.ipynb
+*.md
 
-# models
 my_model.keras
 MultyStage.ipynb
