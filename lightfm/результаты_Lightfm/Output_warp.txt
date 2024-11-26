@@ -1,0 +1,2 @@
+precision_at_k = 0.0033395952
+auc_score = 0.86358607
