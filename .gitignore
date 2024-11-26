@@ -183,6 +183,6 @@ lightfm/model
 
 
 
-models
+# models
 my_model.keras
 MultyStage.ipynb
