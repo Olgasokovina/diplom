@@ -1,12 +1,15 @@
 import sys
+
 sys.path.append('lightfm/')
-import pandas as pd
+
 from collections import defaultdict
+
+import pandas as pd
 from func_for_lightfm import *
 
 
 def part_day(hour):
-    if hour >=5 and hour < 11:
+    if hour >= 5 and hour < 11:
         return 'Morning'
     elif hour >= 11 and hour < 17:
         return 'Afternoon'
@@ -14,8 +17,6 @@ def part_day(hour):
         return 'Evening'
     else:
         return 'Night'
-
-
 
 
 def get_time_periods(hour):
@@ -31,24 +32,22 @@ def get_time_periods(hour):
         return 'Night'
 
 
-
-
 # Функция для дополнения недостающих дат - воскресение
-def add_missing_sundays(user_data,start_date,end_date):
+def add_missing_sundays(user_data, start_date, end_date):
     """
     добавляет пропущенные даты (воскресенье) для каждого товара от начальной даты до конечной даты
     в датесете должны быть столбцы 'timestamp' и 'itemid'
     пример использования
-    available_full = available.groupby('itemid').apply(add_missing_sundays,start_date=start_date,end_date=end_date).ffill().bfill().reset_index(drop=True)
+    available_full = available.groupby('itemid').apply(add_missing_sundays,
+                                            start_date=start_date,
+                                            end_date=end_date).ffill().bfill().reset_index(drop=True)
 
     """
     all_sundays = pd.date_range(start=start_date, end=end_date, freq='W-SUN')
-    full_data = pd.DataFrame({'timestamp': all_sundays})
+    full_data = pd.DataFrame({'timestamp':all_sundays})
     user_data = user_data.merge(full_data, on='timestamp', how='right')
     user_data['itemid'] = user_data['itemid'].ffill().bfill()
     return user_data
-
-
 
 
 def get_top_n(predictions, n=10):
@@ -78,8 +77,6 @@ def get_top_n(predictions, n=10):
         top_n[uid] = user_ratings[:n]
 
     return top_n
-
-
 
 
 def surprise_precision_recall_at_k(predictions, k=10, threshold=3.5):
@@ -122,8 +119,6 @@ def surprise_precision_recall_at_k(predictions, k=10, threshold=3.5):
     return precisions, recalls
 
 
-
-
 # Функция для получения топ-N рекомендаций
 def get_top_n_recommendations(model, user_id, n=3):
     # Получение списка всех items
@@ -136,4 +131,3 @@ def get_top_n_recommendations(model, user_id, n=3):
     top_items = np.argsort(-scores)[:n]
 
     return top_items
-

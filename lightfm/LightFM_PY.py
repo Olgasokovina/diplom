@@ -1,27 +1,29 @@
-import pickle
-import pandas as pd
-from lightfm.data import Dataset
-from lightfm import LightFM
-from lightfm.evaluation import precision_at_k, auc_score
-# from scipy.sparse import csr_matrix
 import multiprocessing
-
-random_state = 42
-
 num_threads = multiprocessing.cpu_count()
 print(f'num_threads = {num_threads}')
+
+
+import pickle
+import pandas as pd
+from lightfm import LightFM
+from lightfm.data import Dataset
+from lightfm.evaluation import auc_score, precision_at_k
+
+
+random_state = 42
 
 
 events = pd.read_pickle('events_1.pkl')
 event_type = {
             'view': 0,
-            'addtocart':0,
+            'addtocart': 0,
             'transaction': 1,
             }
 
 events['event'] = events['event'].map(event_type)
 
-split_date = '2015-07-30' # Почему именно такая дата: чтобы разбика примерно была  в соотношении как в эталонном примере 70:30
+# Почему именно такая дата: чтобы разбика примерно была в соотношении как в эталонном примере 70:30
+split_date = '2015-07-29'
 train = events[events['timestamp'].dt.strftime('%Y-%m-%d') < split_date]
 test = events[events['timestamp'].dt.strftime('%Y-%m-%d') >= split_date]
 
@@ -51,32 +53,20 @@ dataset.fit(
     user_features=all_visitors,
     item_features=pd.concat([
                             # pd.Series(all_parents),
-                             pd.Series(all_available),
+                            pd.Series(all_available),
                             #  pd.Series(all_categoryid),
                             #  pd.Series(all_day_of_week),
                             #  pd.Series(all_year),
                             #  pd.Series(all_month),
-                             pd.Series(all_day),
-                             pd.Series(all_hour),
-                             pd.Series(all_minute),
+                            pd.Series(all_day),
+                            pd.Series(all_hour),
+                            pd.Series(all_minute),
                             #  pd.Series(all_day_period)
-                             ]))
+                            ]))
 
 # Построение матрицы признаков для элементов
 item_features = dataset.build_item_features(
     [(itemid, [
-                # parentid,
-               available,
-            #    categoryid,
-            #    day_of_week,
-            #    year,
-            #    month,
-               day,
-               hour,
-               minute,
-            #    day_period
-               ])
-     for    itemid,
             # parentid,
             available,
             # categoryid,
@@ -87,6 +77,18 @@ item_features = dataset.build_item_features(
             hour,
             minute,
             # day_period
+               ])
+     for itemid,
+        # parentid,
+        available,
+        # categoryid,
+        # day_of_week,
+        # year,
+        # month,
+        day,
+        hour,
+        minute,
+        # day_period
      in zip(events['itemid'],
             # events['parentid'],
             events['available'],
