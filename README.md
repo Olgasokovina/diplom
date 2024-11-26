@@ -51,6 +51,7 @@
 
 ### Резульат  
 Ссылка на проект в GitHub с выполненными заданиями, выводами и графиками. Также прописан докерфайл и можно запускать предсказания из контейнера.  
+Сделана презентация: https://docs.google.com/presentation/d/16agA14XDWHBzrUCXUk4gQl0kmDp8Labcb7D-p6LINfg/edit?usp=sharing  
 docker build -t diplom_image . # создать контейнер  
 docker run -it --rm -v D:/olga2/Diplom/diplom/recomendation:/my_volume  --name server_container -p=5000:5000 diplom_image # Запустить контейнер  
 
