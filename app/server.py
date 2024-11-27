@@ -51,9 +51,18 @@ def unsupported_media_type(error):
 def index():
     return "Test message. Server started!"
 
+@app.route('/metrics', methods=['GET','POST'])
+def metrics():
+    mertic = 'Уважаемые менторы подскажите какие метрики здесь надо выводить? Владислав Масленников не дал ответа на этот вопрос в Пачке. Хотя, по моему мнению, он ни на какие вопросы не дает ответов - только отписки!'
+    print(mertic)
+    if request.method == 'GET':
+        return mertic
+    if request.method == 'POST':
+        return jsonify(mertic)
+
 
 @app.route('/recommend', methods=['POST'])
-def predict():
+def recommend():
     # n - количество выдаваемых рекомендаций
     n = 3
 

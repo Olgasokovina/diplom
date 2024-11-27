@@ -182,6 +182,7 @@ lightfm/LightFM.ipynb
 lightfm/model
 lightfm/LightFM.ipynb
 *.md
+!README.md
 
 my_model.keras
 MultyStage.ipynb
