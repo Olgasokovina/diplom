@@ -16,7 +16,6 @@ with open('unique_items.pkl', 'rb') as pkl_file:
 with open('events_impl.pkl', 'rb') as pkl_file:
     events_impl = pickle.load(pkl_file)
     
-# available_full.timestamp = available_full.timestamp.
 max_date = available_full.timestamp.max()
 min_date = available_full.timestamp.min()
 
