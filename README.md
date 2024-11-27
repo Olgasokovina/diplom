@@ -57,7 +57,7 @@
 docker build -t diplom_image . # создать контейнер  
 docker run -it --rm -v <путь для сохранения файлов с рекомендациями>:/my_volume  --name server_container -p=5000:5000 diplom_image # Запустить контейнер  
 
-Или можно стянуть докер-образ с dockerhub  
+Или можно стянуть докер-образ с dockerhub (https://hub.docker.com/r/olgasokovina/diplom_image)  
 docker pull olgasokovina/diplom_image  
 docker run -it --rm -v <путь для сохранения файлов с рекомендациями>:/my_volume  --name server_container -p=5000:5000 olgasokovina/diplom_image
 
